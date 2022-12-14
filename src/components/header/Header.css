@@ -1,0 +1,38 @@
+header {
+    background-image: linear-gradient(var(--orange), var(--red));
+}
+
+nav {
+    font-family: var(--ff-roboto);
+    padding-bottom: 40px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+
+.navfontsize {
+    font-size: 8px;
+    color: white;
+}
+
+.logoandtext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+    font-family: var(--ff-roboto);
+    font-weight: 700;
+}

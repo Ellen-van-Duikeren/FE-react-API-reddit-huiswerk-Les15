@@ -1,0 +1,15 @@
+.redditpage main {
+    padding-top: 40px;
+    padding-left: 200px;
+    padding-bottom: 40px;
+}
+
+.redditpage h4, .redditpage h3, .redditpage p {
+    padding-bottom: 20px;
+}
+
+#takemeback {
+    font-size: 10px;
+    color: red;
+    text-decoration-line: underline;
+}
