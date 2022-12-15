@@ -1,28 +1,30 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './Home.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/favicon.ico';
 import {Link} from "react-router-dom";
 import Header from "../../components/header/Header";
+import numberFormat from "../../helpers/numberFormat";
+import favicon from '../../assets/favicon.ico';
 
 function Home() {
     const [reddits, setReddits] = useState([]);
+    const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
+            toggleError(false);
+            toggleLoading(true);
+
             try {
                 const result = await axios.get("https://www.reddit.com/hot.json?limit=15");
-                // console.log(result.data.data.children);
-                // console.log(result.data.data.children[0].data.id);
-                // console.log(result.data.data.children[0].data.title);
-                // console.log(result.data.data.children[0].data.url);
-                // console.log(result.data.data.children[0].data.subreddit_name_prefixed);
-                // console.log("Comments: " + result.data.data.children[0].data.num_comments);
-                // console.log("Ups: " + result.data.data.children[0].data.ups);
                 setReddits(result.data.data.children);
             } catch (e) {
                 console.error(e);
+                toggleError(true);
             }
+            toggleLoading(false);
         }
 
         fetchData();
@@ -32,6 +34,8 @@ function Home() {
         <div className="homepage">
             {console.log({reddits})}
             <Header>
+                {error && <span className="errors">Er is iets misgegaan met het ophalen van de data</span>}
+                {loading && <span>Loading...</span>}
                 <img src={logo} alt="logo Reddit" id="logo"/>
                 <h1 className="roboto">Reddit</h1>
             </Header>
@@ -49,7 +53,7 @@ function Home() {
                                         <p className="roboto" id="linkto"><Link
                                             to={"/subreddit/" + reddit.data.subreddit}
                                             id="link-to-reddit">{reddit.data.subreddit_name_prefixed}</Link></p>
-                                        <p className="roboto">Comments: {reddit.data.num_comments} - Ups: {reddit.data.ups}</p>
+                                        <p className="roboto">Comments: {numberFormat(reddit.data.num_comments)} - Ups: {numberFormat(reddit.data.ups)}</p>
                                     </span>
                                 </article>
                             )

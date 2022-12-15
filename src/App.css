@@ -27,15 +27,19 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 5px solid black;
+    /*border: 5px solid black;*/
 }
 
 .inner-container {
     flex-basis: 700px;
     display: flex;
-    flex-direction: column;
-    border: 5px solid green;
     padding-bottom: 40px;
+    flex-direction: column;
+    /*border: 5px solid green;*/
+}
+
+main {
+    background-color: var(--lightorange);
 }
 
 .cards {
@@ -59,10 +63,8 @@ p, li {
     font-size: 10px;
 }
 
-/*footer*/
-footer {
-    background-color: black;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+.errors {
+    color: red;
+    background-color: white;
+    padding: 10px;
 }

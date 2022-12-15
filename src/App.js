@@ -4,6 +4,7 @@ import Subreddit from "./pages/subreddit/Subreddit";
 import './App.css';
 import Home from "./pages/home/Home";
 import React from "react";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/subreddit/:id" element={<Subreddit/>}/>
             </Routes>
-            <footer><p>In opdracht van NOVI Hogeschool &copy; 2022</p></footer>
+            <Footer/>
         </>
     );
 }
