@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: var(--ff-quicksand);
+    /*border: 2px solid purple;*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    /*fonts*/
+    --ff-roboto: 'Quicksand', sans-serif;
+    --ff-quicksand: 'Roboto Condensed', sans-serif;
+
+    /*colors*/
+    --red: #dd3038;
+    --orange: #e7613a;
+    --lightorange: #FDF4F2;
+    --black: #292929;
+    --white: #FFFFFF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*containers*/
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*border: 5px solid black;*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.inner-container {
+    flex-basis: 700px;
+    display: flex;
+    padding-bottom: 40px;
+    flex-direction: column;
+    /*border: 5px solid green;*/
 }
 
-.App-link {
-  color: #61dafb;
+main {
+    background-color: var(--lightorange);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.homepage h3 {
+    padding-bottom: 10px;
+}
+
+p, li {
+    font-size: 10px;
+}
+
+.errors {
+    color: red;
+    background-color: white;
+    padding: 10px;
 }
