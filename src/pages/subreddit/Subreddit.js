@@ -26,6 +26,7 @@ function Subreddit() {
             }
             toggleLoading(false);
         }
+
         if (id) {
             fetchData();
         }
@@ -45,11 +46,10 @@ function Subreddit() {
                 <h3>Title</h3>
                 <p>{redditpage.title}</p>
                 <h3>Description</h3>
-                {/*<p>{(redditpage.public_description).slice(100).join("...")}}</p>*/}
                 <p>{redditpage.public_description}</p>
+                {/*<p>{redditpage.public_description}</p>*/}
                 <h3>Number of subscribers</h3>
-                {/*<p>{numberFormat(redditpage.subscribers)}</p>*/}
-                <p>{redditpage.subscribers}</p>
+                <p>{redditpage.subscribers && numberFormat(redditpage.subscribers)}</p>
 
 
                 <p><Link to={"/"} id="takemeback">&lt; Take me back</Link></p>

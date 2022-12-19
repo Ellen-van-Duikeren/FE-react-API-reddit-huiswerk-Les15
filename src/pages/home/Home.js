@@ -48,7 +48,7 @@ function Home() {
                         {reddits.map((reddit) => {
                             return (
                                 <article key={reddit.data.id} className="card">
-                                    <a href={reddit.data.url}><h3>{reddit.data.title}</h3></a>
+                                    <a href={reddit.data.url}><h3>{reddit.data.title.slice(0, 100).concat("...")}</h3></a>
                                     <span>
                                         <p className="roboto" id="linkto"><Link
                                             to={"/subreddit/" + reddit.data.subreddit}
